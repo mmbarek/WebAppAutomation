@@ -8,7 +8,9 @@
 
     <test name="Home Page">
         <classes>
-            <class name="HomePage"/>
+            <!--<class name="HomePage"/> -->
+
+            <class name="loginTo"/>
         </classes>
 
     </test>
