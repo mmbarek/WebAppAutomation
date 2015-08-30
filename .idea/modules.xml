@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Aljazeera/Aljazeera.iml" filepath="$PROJECT_DIR$/Aljazeera/Aljazeera.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Groupon/Groupon.iml" filepath="$PROJECT_DIR$/Groupon/Groupon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WebAppAutomaiton.iml" filepath="$PROJECT_DIR$/WebAppAutomaiton.iml" />
+      <module fileurl="file://$PROJECT_DIR$/generic/generic.iml" filepath="$PROJECT_DIR$/generic/generic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/linkedIn/linkedIn.iml" filepath="$PROJECT_DIR$/linkedIn/linkedIn.iml" />
+    </modules>
+  </component>
+</project>
