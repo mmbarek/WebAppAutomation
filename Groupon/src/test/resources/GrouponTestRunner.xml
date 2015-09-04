@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="LinkedIn App running on Firefox Browser">
+<suite name="Groupon App running on Firefox Browser">
 
     <parameter name="useSauceLab" value="true"/>
     <parameter name="userName" value="mmbarek"/>
     <parameter name="key" value="12ac1246-ff97-49a5-9dfd-00af93032000"/>
-    <parameter name="url" value="http://www.linkedin.com"/>
+    <parameter name="url" value="http://www.groupon.com"/>
     <parameter name="os" value="windows 10"/>
     <parameter name="browser" value="chrome"/>
     <parameter name="browserVersion" value="40.0"/>
 
-    <!--<parameter name="url" value="http://www.linkedin.com"/>-->
 
-    <!--<parameter name="browser" value="chrome"/>-->
 
     <test name="Home Page">
         <classes>
 
-           <!--<class name="HomePage"/>-->
-            <class name="loginTo"/>
+            <!--<class name="HomePage"/>-->
+            <class name=""/>
         </classes>
 
     </test>

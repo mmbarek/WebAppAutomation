@@ -7,13 +7,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -21,10 +25,15 @@ import java.util.concurrent.TimeUnit;
  */
 public class BaseClass {
     public WebDriver driver = null;
-    @Parameters({"url", "browser"})
+    @Parameters({"useSauceLab","userName","key","url","os", "browser","browserVersion"})
     @BeforeMethod
-    public void setUp(String url,String browser){
-        driver = getDriver(browser);
+    public void setUp (boolean useSauceLab,String userName, String key, String url,String os,String browser,String browserVersion)throws IOException{
+        if (useSauceLab == true){
+            getSauceLabDriver(userName ,key, os, browser, browserVersion);
+        }
+        else {
+            getDriver(browser);
+        }
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.navigate().to((url));
         driver.manage().window().maximize();
@@ -36,7 +45,7 @@ public class BaseClass {
     public void cleanUp(){
         driver.quit();
     }
-    //get the browser driver
+    //get the browser driver locally
     public WebDriver getDriver(String browser){
         WebDriver driver = null;
         if(browser.equalsIgnoreCase("firefox")){
@@ -50,6 +59,21 @@ public class BaseClass {
             System.setProperty("webdriver.ie.driver","generic\\Selenium-Browser-Drivers\\IEDriverServer.exe");
             driver = new InternetExplorerDriver();
         }
+        return driver;
+    }
+    //Use cloud browser on Saucelab
+
+    public WebDriver getSauceLabDriver(String userName, String key, String os, String browser,
+                                       String browserVersion )throws IOException{
+
+        DesiredCapabilities cap = new DesiredCapabilities();
+        cap.setCapability("platform", os);
+        cap.setBrowserName(browser);
+        cap.setCapability("version", browserVersion);
+
+        driver = new RemoteWebDriver(new URL("http://"+ userName + ":" +  key +
+                "@ondemand.saucelabs.com:80/wd/hub"), cap);
+
         return driver;
     }
     //To click on an element
@@ -112,4 +136,16 @@ public class BaseClass {
     public void sleepFor(int sec) throws InterruptedException{
         Thread.sleep(2000*sec);
     }
+    //navigate Back, Forward, refresh
+    public void navigateBack(){
+        driver.navigate().back();
+    }
+    public void navigateForward(){
+        driver.navigate().forward();
+    }
+    public void refreshBrowser() {
+        driver.navigate().refresh();
+    }
+
+
 }
