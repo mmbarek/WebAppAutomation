@@ -6,12 +6,15 @@ import CommonApi.BaseClass;
 public class navigateWebApp extends BaseClass {
 
         public void navigateTo()throws InterruptedException{
-            clickByCss("html/body/header/div/div/div/div[4]/div[2]/div[2]/a[2]");
-            sleepFor(5000);
-            driver.navigate().back();
-            sleepFor(5000);
-            clickByCss("html/body/header/div/div/div/div[4]/div[2]/div[2]/a[7]");
-            sleepFor(5000);
+            clickByXpath("html/body/header/div/div/div/div[4]/div[2]/div[2]/a[4]");
+            sleepFor(3000);
+            navigateBack();
+            sleepFor(3000);
+            //navigate to sport page
+            clickByXpath("html/body/header/div/div/div/div[4]/div[2]/div[2]/a[7]");
+            sleepFor(2000);
+            typeAndEnterByCss(".header-search-input.media-body", "Real Madrid");
+            sleepFor(3000);
 
         }
 
