@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 /**
  * Created by mounssif on 8/28/2015.
  */
-public class HomePage extends BaseClass {
+public class linkHomePage extends BaseClass {
     @Test
     //Test to create an account in Linkedin!!!!!!!!!!!
     public void createAccount()throws InterruptedException{

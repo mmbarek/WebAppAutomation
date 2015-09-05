@@ -15,7 +15,7 @@
     <test name="Home Page">
         <classes>
 
-            <!--<class name="HomePage"/>-->
+
             <class name=""/>
         </classes>
 

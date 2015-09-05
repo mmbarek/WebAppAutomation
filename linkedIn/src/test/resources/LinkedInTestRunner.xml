@@ -17,7 +17,7 @@
     <test name="Home Page">
         <classes>
 
-           <!--<class name="HomePage"/>-->
+           <!--<class name="LinkHomePage"/>-->
             <class name="loginTo"/>
         </classes>
 

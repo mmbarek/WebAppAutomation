@@ -12,7 +12,7 @@
 
     <test name="Home Page">
         <classes>
-         <class name="homePage"/>
+         <class name="AljHomePage"/>
          <!--<class name="navigateWebApp"/>-->
         </classes>
 
