@@ -8,8 +8,8 @@ import org.testng.annotations.Test;
 public class AljHomePage extends BaseClass{
     @Test
     public void navigate() throws InterruptedException{
-        driver.findElement(By.cssSelector(".header-nav-link")).click();
-        Thread.sleep(2);
+        //driver.findElement(By.cssSelector(".header-sections-link")).click();
+        //Thread.sleep(2);
         //navigate to tech page
         clickByXpath("html/body/header/div/div/div/div[4]/div[2]/div[2]/a[4]");
         sleepFor(2);

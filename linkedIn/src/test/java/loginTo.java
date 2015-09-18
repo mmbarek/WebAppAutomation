@@ -11,8 +11,8 @@ public class loginTo extends BaseClass {
 @Test
     // Test to login to Linkedin after the creation of an account.
     public void singIn()throws InterruptedException {
-        typeByCss("#login-email", "NBody123@yahoo.com");
-        sleepFor(1);
+        typeByCss("#login-email","NBody123@yahoo.com" );
+    sleepFor(1);
         typeByCss("#login-password", "Qwert1234");
         sleepFor(1);
         clickByCss("#pagekey-uno-reg-guest-home > div.header > div > form > input[type=\"submit\"]:nth-child(8)");

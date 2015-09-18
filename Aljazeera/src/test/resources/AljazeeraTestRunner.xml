@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Aljazeera App running on Firefox Browser">
 
-    <parameter name="useSauceLab" value="true"/>
+    <parameter name="useSauceLab" value="false"/>
     <parameter name="userName" value="mmbarek"/>
     <parameter name="key" value="12ac1246-ff97-49a5-9dfd-00af93032000"/>
     <parameter name="url" value="http://www.aljazeera.com"/>

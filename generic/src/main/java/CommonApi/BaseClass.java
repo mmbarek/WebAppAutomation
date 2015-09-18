@@ -19,20 +19,24 @@ import org.testng.annotations.Parameters;
 import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 /**
  * Created by mounssif on 8/27/2015.
  */
 public class BaseClass {
     public WebDriver driver = null;
+    public Logger log = Logger.getLogger(BaseClass.class.getName());
     @Parameters({"useSauceLab","userName","key","url","os", "browser","browserVersion"})
     @BeforeMethod
     public void setUp (boolean useSauceLab,String userName, String key, String url,String os,String browser,String browserVersion)throws IOException{
         if (useSauceLab == true){
             getSauceLabDriver(userName ,key, os, browser, browserVersion);
+            log.info("Test Running on SauceLab");
         }
         else {
             getDriver(browser);
+            log.info("Test Running on Locally");
         }
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.navigate().to((url));
@@ -44,20 +48,25 @@ public class BaseClass {
     @AfterMethod
     public void cleanUp(){
         driver.quit();
+        log.info("Browser is closed");
+
     }
+
     //get the browser driver locally
     public WebDriver getDriver(String browser){
-        WebDriver driver = null;
         if(browser.equalsIgnoreCase("firefox")){
             driver = new FirefoxDriver();
+            log.info("Browser is FireFox");
         }
        else if(browser.equalsIgnoreCase("chrome")){
             System.setProperty("webdriver.chrome.driver","generic\\Selenium-Browser-Drivers\\chromedriver.exe");
             driver = new ChromeDriver();
+            log.info("Browser is Chrome");
         }
         else if (browser.equalsIgnoreCase("ie")){
             System.setProperty("webdriver.ie.driver","generic\\Selenium-Browser-Drivers\\IEDriverServer.exe");
             driver = new InternetExplorerDriver();
+            log.info("Browser is IE");
         }
         return driver;
     }

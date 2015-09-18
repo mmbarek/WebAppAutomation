@@ -23,6 +23,7 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="Aljazeera" />
+        <module name="BeinSports" />
         <module name="generic" />
         <module name="Groupon" />
         <module name="linkedIn" />
@@ -31,6 +32,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Aljazeera" target="1.5" />
+      <module name="BeinSports" target="1.5" />
       <module name="generic" target="1.5" />
       <module name="Groupon" target="1.5" />
       <module name="linkedIn" target="1.5" />
